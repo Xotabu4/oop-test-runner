@@ -1,0 +1,60 @@
+{
+  "stats": {
+    "suites": 3,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2018-04-15T19:41:22.463Z",
+    "end": "2018-04-15T19:41:24.753Z",
+    "duration": 2290
+  },
+  "tests": [
+    {
+      "title": "should be successful",
+      "fullTitle": "Search should be successful",
+      "duration": 582,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "can be retrived for all hotels from search results",
+      "fullTitle": "Comments can be retrived for all hotels from search results",
+      "duration": 1151,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "first can be purchased",
+      "fullTitle": "Purchase first can be purchased",
+      "duration": 552,
+      "currentRetry": 0,
+      "err": {}
+    }
+  ],
+  "pending": [],
+  "failures": [],
+  "passes": [
+    {
+      "title": "should be successful",
+      "fullTitle": "Search should be successful",
+      "duration": 582,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "can be retrived for all hotels from search results",
+      "fullTitle": "Comments can be retrived for all hotels from search results",
+      "duration": 1151,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "first can be purchased",
+      "fullTitle": "Purchase first can be purchased",
+      "duration": 552,
+      "currentRetry": 0,
+      "err": {}
+    }
+  ]
+}
