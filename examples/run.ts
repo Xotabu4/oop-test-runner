@@ -1,6 +1,11 @@
-import { SuccesfulLogin } from './successFullLogin';
-import { Runner } from '../lib/runner';
+import { tests } from './tests';
+import { BasicRunner } from '../lib/runners';
+import { PrettyRunner } from '../lib/runners/prettyRunner';
 
-new Runner(
-    [new SuccesfulLogin()]
+// new BasicRunner(
+//     tests
+// ).run()
+
+new PrettyRunner(
+    tests
 ).run()

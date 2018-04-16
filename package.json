@@ -9,7 +9,9 @@
   "author": "Oleksandr Khotemskyi",
   "license": "MIT",
   "dependencies": {
+    "@types/node": "9.6.5",
     "ts-node": "5.0.1",
-    "typescript": "2.8.1"
+    "typescript": "2.8.1",
+    "pretty-error": "2.1.1"
   }
 }

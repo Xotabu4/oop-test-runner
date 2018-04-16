@@ -4,6 +4,8 @@ export abstract class Test {
         before: [],
         after: []
     }
-    
+
+    reporters = []
+
     abstract test()
 }

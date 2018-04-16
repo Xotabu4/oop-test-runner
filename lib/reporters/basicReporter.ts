@@ -1,8 +1,8 @@
 import { BasicTest } from "../testObject";
 import { Before, After } from "../conditions";
 
-export class BasicLogger {
-    attach(test: BasicTest) {
+export class BasicReporter {
+    attachTo(test: BasicTest) {
         class BeforeBasicLogger extends Before {
             apply() {
                 console.log(`Test ${test.name} started`)
@@ -14,7 +14,6 @@ export class BasicLogger {
                 console.log(`Test ${test.name} passed`)
             }
         }
-
         new BeforeBasicLogger(test).attach()
         new AfterBasicLogger(test).attach()
 
