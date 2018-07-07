@@ -4,6 +4,18 @@
     "module": "commonjs",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "outDir": "./built" 
+    "outDir": "./built",
+    "inlineSourceMap": true,
+    "lib": [
+      "es2015"
+    ],
+    "traceResolution": true,
+    "baseUrl": ".", // This must be specified if "paths" is.
+    "paths": {
+      "code": [
+        "*",
+        "examples/code" // This mapping is relative to "baseUrl"
+      ]
+    }
   }
 }

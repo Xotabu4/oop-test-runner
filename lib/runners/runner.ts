@@ -8,9 +8,9 @@ export abstract class Runner {
 
     abstract run();
 
-    result(test: Test) {
+    async result(test: Test) {
         try {
-            return test.test()
+            return await test.test()
         } catch (error) {
             return error
         }

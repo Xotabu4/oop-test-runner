@@ -5,13 +5,13 @@ export class BasicReporter {
     attachTo(test: BasicTest) {
         class BeforeBasicLogger extends Before {
             apply() {
-                console.log(`Test ${test.name} started`)
+                console.log(`---Test ${test.name} started`)
             }
         }
 
         class AfterBasicLogger extends After {
             apply() {
-                console.log(`Test ${test.name} passed`)
+                console.log(`---Test ${test.name} finished`)
             }
         }
         new BeforeBasicLogger(test).attach()

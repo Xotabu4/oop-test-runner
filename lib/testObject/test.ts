@@ -7,5 +7,5 @@ export abstract class Test {
 
     reporters = []
 
-    abstract test()
+    abstract test(): Promise<any>
 }
