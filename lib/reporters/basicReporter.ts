@@ -6,12 +6,13 @@ export class BasicReporter {
         class BeforeBasicLogger extends Before {
             apply() {
                 console.log(`---Test ${test.name} started`)
+                console.time(`---Test ${test.name} finished`)
             }
         }
 
         class AfterBasicLogger extends After {
             apply() {
-                console.log(`---Test ${test.name} finished`)
+                console.timeEnd(`---Test ${test.name} finished`)
             }
         }
         new BeforeBasicLogger(test).attach()

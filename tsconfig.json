@@ -13,8 +13,7 @@
     "baseUrl": ".", // This must be specified if "paths" is.
     "paths": {
       "code": [
-        "*",
-        "examples/code" // This mapping is relative to "baseUrl"
+        "./lib"
       ]
     }
   }

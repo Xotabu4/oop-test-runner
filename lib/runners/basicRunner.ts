@@ -1,5 +1,5 @@
 import { BasicTest } from '../testObject';
-import { BasicReporter } from '../reporters';
+import { BasicReporter, Reporter } from '../reporters';
 import { Runner } from './runner';
 
 
@@ -11,10 +11,12 @@ export class BasicRunner extends Runner {
     constructor(protected tests: BasicTest[]) {
         super(tests)
     }
+    async addReporter(reporter: Reporter) {
+        this.tests
+            .map(test => reporter.attachTo(test));
+    }
 
     async run() {
-        this.tests
-            .map(test => new BasicReporter().attachTo(test));
         for (let test of this.tests) {
             test.conditions.before.map(condition => condition.apply())
             let result = await this.result(test)

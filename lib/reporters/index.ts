@@ -1,4 +1,5 @@
 
-export { ResultReporter } from './resultReporter'
-export { PrettyResultReporter } from './prettyResultReporter'
+
+export { PrettyTestReporter } from './prettyResultReporter'
 export { BasicReporter } from './basicReporter'
+export { Reporter } from './reporter'

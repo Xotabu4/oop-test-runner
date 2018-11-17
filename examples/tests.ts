@@ -32,9 +32,9 @@ class SomeAsyncTest extends BasicTest {
     }
 }
 
-export let tests = [
-    new SuccesfullLogin(),
-    new TestThatWillFail(),
-    //TODO: Messed output
-    new SomeAsyncTest()
-]
+// export let tests = [
+//     new SuccesfullLogin(),
+//     new TestThatWillFail(),
+//     //TODO: Messed output
+//     new SomeAsyncTest()
+// ]

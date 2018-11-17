@@ -8,6 +8,10 @@ export abstract class Runner {
 
     abstract run();
 
+    /**
+     * Wrapper to get test error as object (if any)
+     * @param test 
+     */
     async result(test: Test) {
         try {
             return await test.test()

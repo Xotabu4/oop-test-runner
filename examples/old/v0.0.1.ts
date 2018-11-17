@@ -1,4 +1,5 @@
 
+
 abstract class BaseTest {
     public name: string
     public description: string
@@ -25,7 +26,9 @@ class SummTest extends BaseTest {
 
 
 
-let tests = [new MultiplyTest(), new SummTest()]
+let tests = [
+    // new MultiplyTest(), new SummTest()
+]
 
 
 let results = tests.map(test => {
