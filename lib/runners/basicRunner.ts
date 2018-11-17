@@ -11,9 +11,9 @@ export class BasicRunner extends Runner {
     constructor(protected tests: BasicTest[]) {
         super(tests)
     }
-    async addReporter(reporter: Reporter) {
+    async addReporter(reporter: new () => Reporter) {
         this.tests
-            .map(test => reporter.attachTo(test));
+            .map(test => new reporter().attachTo(test));
     }
 
     async run() {

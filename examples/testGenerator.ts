@@ -11,9 +11,9 @@ while (counter < numb) {
     tests.push(new class extends BasicTest {
         name = `Test number #${counter}`
         async test() {
-            return new Promise(resolve => {
+            return new Promise((resolve, reject) => {
                 setTimeout(() => {
-                    resolve()
+                    reject(new Error('Error!'))
                 }, 10)
             })
         }

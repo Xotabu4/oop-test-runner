@@ -3,8 +3,6 @@ import { BasicTest } from '../testObject';
 import { BasicReporter } from './basicReporter';
 
 export class PrettyTestReporter extends BasicReporter {
-    test: BasicTest
-    
     report(result: any) {
         if (!result) return
         var pe = new PrettyError();

@@ -1,7 +1,7 @@
 import { resolve } from "path"
 import { BasicTest } from "../testObject"
 export class BasicTestCollector {
-    constructor(protected config) {
+    constructor(protected config: { path: string }) {
 
     }
 
