@@ -1,10 +1,11 @@
 import { Test } from '../testObject';
+import { EventEmitter } from 'events';
 
 
-export abstract class Runner {
-    reporters
-
-    constructor(protected tests: Test[]) { }
+export abstract class Runner extends EventEmitter {
+    constructor(protected tests: Test[]) {
+        super()
+    }
 
     abstract run();
 
@@ -19,6 +20,8 @@ export abstract class Runner {
             return error
         }
     }
+
+    abstract subscribeReporter(reporter)
 }
 
 

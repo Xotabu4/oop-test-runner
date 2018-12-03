@@ -9,11 +9,14 @@ import { BasicRunner } from './basicRunner';
  */
 export class ConcurrentRunner extends BasicRunner {
     async run() {
-        await Promise.all(this.tests.map(async (test, indx) => {
+        this.emit('onStart', this.tests)
+        await Promise.all(this.tests.map(async (test, testIndx) => {
+            this.emit('onTestStart', test, testIndx)
             test.conditions.before.map(condition => condition.apply())
-            let result = await this.result(test)
-            test.reporters.map(reporter => reporter.report(result))
+            const result = await this.result(test)
             test.conditions.after.map(condition => condition.apply())
+            this.emit('onTestEnd', test, testIndx, result)
         }))
+        this.emit('onEnd', this.tests)
     }
 }

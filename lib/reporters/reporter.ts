@@ -1,6 +1,12 @@
-import { Test } from "../testObject";
 
-export abstract class Reporter {
+interface IReporter {
+    onStart?(tests, ...args)
+    onTestStart?(test, ...args)
+    onTestEnd?(test, ...args)
+    // onTestFail', onTestEnd will receive error if any as third param
+    onEnd?(tests, ...args)
+}
 
-    abstract attachTo(test: Test): Test
+export abstract class Reporter implements IReporter {
+
 }
