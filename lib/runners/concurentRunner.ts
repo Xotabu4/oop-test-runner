@@ -1,5 +1,3 @@
-import { BasicTest } from '../testObject';
-import { Reporter } from '../reporters';
 import { BasicRunner } from './basicRunner';
 
 
