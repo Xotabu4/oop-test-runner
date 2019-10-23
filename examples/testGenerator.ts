@@ -1,14 +1,14 @@
-import { BasicTest } from "../lib/testObject";
+import { Test } from "../lib/testObject";
 
 /**
  * Just dummy test generator to test on huge test numbers
  */
-let numb = 5
+let numb = 500
 
 let counter = 0
 export let tests = []
 while (counter < numb) {
-    tests.push(new class extends BasicTest {
+    tests.push(new class extends Test {
         name = `Test number #${counter}`
         async test() {
             return new Promise((resolve, reject) => {

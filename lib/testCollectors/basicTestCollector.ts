@@ -1,5 +1,5 @@
 import { resolve } from "path"
-import { BasicTest } from "../testObject"
+import { Test } from "../testObject"
 export class BasicTestCollector {
     constructor(protected config: { path: string }) {
 
@@ -8,7 +8,7 @@ export class BasicTestCollector {
     /**
      * Requires all files within config.path reqursively and collects their tests.
      */
-    collectTests(): BasicTest[] {
+    collectTests(): Test[] {
         let sourcesDir = this.config.path
         let collectedTests = []
         let importPath = resolve(process.cwd(), sourcesDir)

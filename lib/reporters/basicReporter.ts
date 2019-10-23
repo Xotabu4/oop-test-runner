@@ -1,4 +1,4 @@
-import { BasicTest, Test } from "../testObject";
+import { Test } from "../testObject";
 import { Before, After } from "../conditions";
 import * as PrettyError from 'pretty-error'
 import { Reporter } from "./reporter";
@@ -12,25 +12,25 @@ import { Reporter } from "./reporter";
 export class BasicReporter extends Reporter {
     allTests = null
 
-    onStart(tests: BasicTest[]) {
+    onStart(tests: Test[]) {
         this.allTests = tests
         console.log(`---Total ${this.allTests.length} will be run`)
         console.time(`---Tests run took`)
     }
 
-    onTestStart(test: BasicTest, testIndx) {
-        console.log(`---Test ${test.name} started`)
-        console.time(`---Test ${test.name} finished`)
+    onTestStart(test: Test, testIndx) {
+        console.log(`---Test ${test.name} ${test.id} started`)
+        console.time(`---Test ${test.name} ${test.id} finished`)
     }
 
-    onTestEnd(test: BasicTest, testIndx, result) {
-        console.timeEnd(`---Test ${test.name} finished`)
+    onTestEnd(test: Test, testIndx, result) {
+        console.timeEnd(`---Test ${test.name} ${test.id} finished`)
         if (!result) {
             console.log(test.name, '|| is passed!')
         } else {
             var pe = new PrettyError();
             console.log(`${test.name} || is failed!`)
-            console.log(pe.render(result))
+            console.log('RENDER', pe.render(result))
         }
     }
 

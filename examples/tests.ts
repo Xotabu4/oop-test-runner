@@ -1,6 +1,6 @@
-import { BasicTest } from "../lib/testObject";
+import { Test } from "../lib/testObject";
 
-class SuccesfullLogin extends BasicTest {
+class SuccesfullLogin extends Test {
     name = 'Verifying that we still can login'
     description = 'Verifying that we still can login'
 
@@ -9,7 +9,7 @@ class SuccesfullLogin extends BasicTest {
     }
 }
 
-class TestThatWillFail extends BasicTest {
+class TestThatWillFail extends Test {
     name = 'This test supposed to fail'
     description = 'Verifying that we still can fail'
 
@@ -18,7 +18,7 @@ class TestThatWillFail extends BasicTest {
     }
 }
 
-class SomeAsyncTest extends BasicTest {
+class SomeAsyncTest extends Test {
     name = 'Async test that returns promise'
     description = 'Async test!'
 

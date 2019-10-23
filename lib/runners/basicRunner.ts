@@ -1,4 +1,4 @@
-import { BasicTest } from '../testObject';
+import { Test } from '../testObject';
 import { Reporter } from '../reporters';
 import { Runner } from './runner';
 
@@ -15,7 +15,7 @@ export class BasicRunner extends Runner {
 
     protected reporters = []
 
-    constructor(protected tests: BasicTest[]) {
+    constructor(protected tests: Test[]) {
         super(tests)
     }
 

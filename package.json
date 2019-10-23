@@ -9,10 +9,13 @@
   "author": "Oleksandr Khotemskyi",
   "license": "MIT",
   "dependencies": {
-    "@types/node": "10.12.9",
-    "ts-node": "7.0.1",
-    "typescript": "3.1.6",
+    "@types/node": "12.11.5",
+    "@types/uuid": "3.4.5",
+    "ts-node": "8.4.1",
+    "typescript": "3.6.4",
     "pretty-error": "2.1.1",
-    "require-all": "3.0.0"
+    "require-all": "3.0.0",
+    "microjob": "0.7.0",
+    "uuid": "3.3.3"
   }
 }
