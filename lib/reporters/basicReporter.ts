@@ -19,14 +19,14 @@ export class BasicReporter extends Reporter {
     }
 
     onTestStart(test: Test, testIndx) {
-        console.log(`---Test ${test.name} ${test.id} started`)
-        console.time(`---Test ${test.name} ${test.id} finished`)
+        //console.log(`---Test ${test.name} ${test.id} started`)
+        //console.time(`---Test ${test.name} ${test.id} finished`)
     }
 
     onTestEnd(test: Test, testIndx, result) {
-        console.timeEnd(`---Test ${test.name} ${test.id} finished`)
+        //console.timeEnd(`---Test ${test.name} ${test.id} finished`)
         if (!result) {
-            console.log(test.name, '|| is passed!')
+            //console.log(test.name, '|| is passed!')
         } else {
             var pe = new PrettyError();
             console.log(`${test.name} || is failed!`)
@@ -35,6 +35,7 @@ export class BasicReporter extends Reporter {
     }
 
     onEnd(tests) {
+        console.log(`---Total ${this.allTests.length} executed`)
         console.timeEnd(`---Tests run took`)
     }
 }

@@ -3,7 +3,7 @@ import { Test } from "../lib/testObject";
 /**
  * Just dummy test generator to test on huge test numbers
  */
-let numb = 500
+let numb = 1000
 
 let counter = 0
 export let tests = []
@@ -13,8 +13,9 @@ while (counter < numb) {
         async test() {
             return new Promise((resolve, reject) => {
                 setTimeout(() => {
-                    reject(new Error('Error!'))
-                }, 10)
+                    // reject(new Error('Error!'))
+                    resolve()
+                }, 10000)
             })
         }
     })

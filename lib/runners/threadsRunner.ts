@@ -12,21 +12,22 @@ export class ThreadsRunner extends BasicRunner {
 
         if (isMainThread) {
             this.emit('onStart', this.tests)
-            await microjob.start();
+            process.setMaxListeners(0);
+            await microjob.start({maxWorkers: this.tests.length});
     
             const results = this.tests.map(async (test, testIndx) => {
                 this.emit('onTestStart', test, testIndx)
                 test.conditions.before.map(condition => condition.apply())
-                console.time('JOB_FINISHED'+ testIndx)
+                //console.time('JOB_FINISHED'+ testIndx)
                 const result = await microjob.job(async DATA => {
-                    console.log(DATA)
+                    //console.log(DATA)
                     global['TEST_DATA'] = DATA;
                     process.env['TS_NODE_FILES'] = true as any
                     require('ts-node').register()
-                    console.time('TEST_WORKER_FINISHED'+ DATA.runnerConfig.testNumber)
+                    //console.time('TEST_WORKER_FINISHED_'+ DATA.runnerConfig.testNumber)
                     const { runFinished } = require(DATA.runnerConfig.processArgv[1])
                     await runFinished
-                    console.timeEnd('TEST_WORKER_FINISHED'+ DATA.runnerConfig.testNumber)
+                    //console.timeEnd('TEST_WORKER_FINISHED_'+ DATA.runnerConfig.testNumber)
                 }, {
                     data: {
                         runnerConfig: {
@@ -35,7 +36,7 @@ export class ThreadsRunner extends BasicRunner {
                         }
                     }
                 })
-                console.timeEnd('JOB_FINISHED'+ testIndx)
+                //console.timeEnd('JOB_FINISHED'+ testIndx)
                 // const result = await this.result(test)
                 test.conditions.after.map(condition => condition.apply())
                 this.emit('onTestEnd', test, testIndx, result)

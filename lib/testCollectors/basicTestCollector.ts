@@ -12,18 +12,20 @@ export class BasicTestCollector {
         let sourcesDir = this.config.path
         let collectedTests = []
         let importPath = resolve(process.cwd(), sourcesDir)
-        console.log(importPath)
+        console.log('Collecting tests from:', importPath)
+        console.time('Test collection took')
         require('require-all')({
             dirname: importPath,
             filter: /.*\.ts$/,
-            resolve: function (testFile) {
+            resolve: function (file) {
                 // In case no such property or nothing exported
-                if (Array.isArray(testFile.tests)) {
-                    collectedTests = collectedTests.concat(collectedTests, testFile.tests)
+                if (Array.isArray(file.tests)) {
+                    collectedTests = collectedTests.concat(collectedTests, file.tests)
                 }
             }
         });
-        console.log('Collected ', collectedTests.length)
+        console.log('Collected tests: ', collectedTests.length)
+        console.timeEnd('Test collection took')
         return collectedTests
     }
 }

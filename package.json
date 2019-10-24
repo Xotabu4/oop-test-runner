@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "examples": "ts-node ./run.ts"
+    "threads": "ts-node ./run.ts",
+    "async": "ts-node ./run_async.ts"
   },
   "author": "Oleksandr Khotemskyi",
   "license": "MIT",
