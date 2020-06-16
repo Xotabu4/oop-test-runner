@@ -2,7 +2,9 @@ const importantData = require('/Users/oleksandrkhotemskyi/Documents/GitHub/Publi
 
 function test() {
     if (testNum == 5) {
-        throw new Error('oops')
+        setTimeout(()=> {
+            throw new Error('oops')
+        }, 5000)
     }
     return { importantData, testNum }
 }

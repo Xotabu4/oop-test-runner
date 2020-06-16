@@ -4,6 +4,8 @@ import * as microjob from 'microjob'
 /**
  * Simple threads runner. Uses nodejs worker threads to run each test in own thread
  * 
+ * @deprecated To much CPU and RAM consumption on 1000 threads - 20gb!
+ * seems like each thread loads whole node_modules
  * TODO: implement concurrency limit
  */
 export class ThreadsRunner extends BasicRunner {

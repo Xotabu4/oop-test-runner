@@ -3,9 +3,9 @@ import { Test } from "../lib/testObject";
 /**
  * Just dummy test generator to test on huge test numbers
  */
-let numb = 500
+let numb = 1000
 
-let counter = 0
+let counter = 500
 export let tests = []
 while (counter < numb) {
     tests.push(new class extends Test {

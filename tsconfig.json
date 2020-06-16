@@ -5,8 +5,8 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "outDir": "./built",
-    "inlineSourceMap": true,
-    "traceResolution": true,
+    // "inlineSourceMap": true,
+    // "traceResolution": true,
     "baseUrl": ".", // This must be specified if "paths" is.
     "paths": {
       "code": [

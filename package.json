@@ -13,10 +13,11 @@
     "@types/node": "12.11.5",
     "@types/uuid": "3.4.5",
     "ts-node": "8.4.1",
-    "typescript": "3.6.4",
+    "typescript": "3.8.3",
     "pretty-error": "2.1.1",
     "require-all": "3.0.0",
     "microjob": "0.7.0",
-    "uuid": "3.3.3"
+    "uuid": "3.3.3",
+    "highland": "2.13.5"
   }
 }

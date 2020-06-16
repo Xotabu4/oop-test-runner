@@ -11,6 +11,16 @@ const context = {
   module,
   __filename,
   __dirname,
+  // TODO: do i need to have setTimeout errors handling?
+  // setTimeout: function (code, timeout) {
+  //   setTimeout(function () {
+  //     try {
+  //       code();
+  //     } catch (error) {
+
+  //     }
+  //   })
+  // }
 };
 
 let testCode = `${testCodeUnwrapped}; try{ test() } catch(err) { err }`
@@ -31,4 +41,8 @@ for (let i = 0; i < 10; ++i) {
 
 // console.log(context);
 // Prints: { animal: 'cat', count: 12, name: 'kitty' }
-console.timeEnd('measure')
+console.timeEnd('Total time: ')
+
+process.on('exit', function (code) {
+  console.log('Exit code is:', code)
+})
